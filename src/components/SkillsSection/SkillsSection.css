@@ -1,0 +1,191 @@
+.skills-section {
+  position: relative;
+  min-height: 100vh;
+  margin-top: -4.5rem;
+  padding: 10.4rem 4.5rem 5rem;
+  background:
+    radial-gradient(circle at 84% 14%, rgba(255, 122, 26, 0.14), transparent 28%),
+    linear-gradient(180deg, #2a2a2a 0%, #1f1f1f 36%, #191919 100%);
+  overflow: hidden;
+}
+
+.skills-section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 8rem;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.2), transparent 20%),
+    radial-gradient(circle at 76% 18%, rgba(255, 122, 26, 0.08), transparent 22%),
+    linear-gradient(180deg, rgba(210, 210, 210, 0.96) 0%, rgba(112, 112, 112, 0.34) 52%, rgba(25, 25, 25, 0) 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 42%, 86% 58%, 68% 44%, 49% 68%, 30% 46%, 0 62%);
+  pointer-events: none;
+}
+
+.skills-section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2.8rem;
+  height: 5.2rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 72%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 122, 26, 0.18) 0 22px,
+      rgba(255, 122, 26, 0) 22px 52px
+    );
+  clip-path: polygon(0 16%, 14% 8%, 28% 22%, 44% 0, 63% 26%, 80% 10%, 100% 24%, 100% 100%, 0 100%);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.skills-section__header {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin-bottom: 2.5rem;
+}
+
+.skills-section__eyebrow {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  color: #ff9340;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.skills-section h2 {
+  margin: 0;
+  color: #f2f2f2;
+  font-size: clamp(2rem, 4.2vw, 3.6rem);
+  letter-spacing: -0.03em;
+}
+
+.skills-section__header p {
+  margin: 0.9rem 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.skills-groups {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.skills-group {
+  padding: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  background:
+    linear-gradient(150deg, rgba(255, 122, 26, 0.1), rgba(11, 11, 11, 0.95) 46%, rgba(8, 8, 8, 0.98) 100%);
+  box-shadow:
+    0 18px 36px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.skills-group h3 {
+  margin: 0 0 1rem;
+  color: #ffb67f;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.skills-group__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem 0.8rem;
+}
+
+.skill-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.72rem;
+  min-height: 126px;
+  padding: 0.95rem 0.5rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    rgba(255, 255, 255, 0.03);
+  text-align: center;
+}
+
+.skill-pill__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 18px;
+  color: #ff9a4a;
+  background:
+    linear-gradient(145deg, rgba(255, 122, 26, 0.18), rgba(255, 255, 255, 0.04)),
+    rgba(255, 122, 26, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 12px 24px rgba(0, 0, 0, 0.16);
+  font-size: 2rem;
+}
+
+.skill-pill__label {
+  color: #e8e8e8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.4;
+  max-width: 100%;
+  text-wrap: balance;
+}
+
+@media (max-width: 1080px) {
+  .skills-section {
+    margin-top: -3.6rem;
+    padding: 8.4rem 1.5rem 3.8rem;
+  }
+
+  .skills-groups {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-section {
+    margin-top: -3rem;
+    padding: 7.1rem 1rem 3.4rem;
+  }
+
+  .skills-group {
+    padding: 1rem;
+  }
+
+  .skills-group__grid {
+    gap: 0.8rem 0.65rem;
+  }
+
+  .skill-pill {
+    min-height: 114px;
+    padding: 0.85rem 0.35rem 0.7rem;
+  }
+
+  .skill-pill__icon {
+    width: 54px;
+    height: 54px;
+    font-size: 1.7rem;
+  }
+
+  .skill-pill__label {
+    font-size: 0.74rem;
+  }
+}

@@ -1,0 +1,86 @@
+.scroll-indicator {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: -2.65rem;
+  margin-bottom: -2.65rem;
+  z-index: 12;
+}
+
+.scroll-indicator__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background:
+    linear-gradient(135deg, rgba(255, 122, 26, 0.18), rgba(10, 10, 10, 0.92) 54%, rgba(0, 0, 0, 0.96)),
+    rgba(10, 10, 10, 0.86);
+  box-shadow:
+    0 18px 36px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  color: #f6f6f6;
+  cursor: pointer;
+  backdrop-filter: blur(16px);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.scroll-indicator__button:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 122, 26, 0.34);
+  box-shadow:
+    0 22px 40px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(255, 122, 26, 0.08);
+}
+
+.scroll-indicator__label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.scroll-indicator__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff7a1a, #ff9a3d);
+  color: #fff;
+  animation: scroll-indicator-bounce 1.8s ease-in-out infinite;
+}
+
+.scroll-indicator__arrow svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+@keyframes scroll-indicator-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+@media (max-width: 640px) {
+  .scroll-indicator {
+    margin-top: -2.1rem;
+    margin-bottom: -2.1rem;
+    padding-inline: 1rem;
+  }
+
+  .scroll-indicator__button {
+    width: 100%;
+    justify-content: center;
+  }
+}

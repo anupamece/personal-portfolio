@@ -1,0 +1,19 @@
+.portfolio-page {
+  min-height: 100vh;
+  background: #c3c3c3;
+}
+
+.portfolio-page__nav {
+  padding: 2rem 3rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.portfolio-page__content {
+  min-height: calc(100vh - 110px);
+  margin-top: -6.5rem;
+}
+
+.portfolio-page__content .projects-section {
+  padding-top: 11rem;
+}

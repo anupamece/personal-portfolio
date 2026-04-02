@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "level": "Class X",
+    "institute": "Jawahar Navodaya Vidyalaya",
+    "period": "2015 - 2020",
+    "description": "Built a strong academic base while actively participating in science exhibitions and school-level technical events.",
+    "logo": "/educationLogos/secondary.svg",
+    "score": "92%",
+    "keyAchievement": "Ranked among the top 5 students in the graduating batch."
+  },
+  {
+    "id": 2,
+    "level": "Class XII",
+    "institute": "Jawahar Navodaya Vidyalaya",
+    "period": "2020 - 2022",
+    "description": "Focused on mathematics and computer science, with growing interest in interface design and web technologies.",
+    "logo": "/educationLogos/senior-secondary.svg",
+    "score": "91.2%",
+    "keyAchievement": "Led a student team that won an inter-school coding challenge."
+  },
+  {
+    "id": 3,
+    "level": "Bachelor Degree",
+    "institute": "National Institute of Technology Raipur",
+    "period": "2023- ongoing",
+    "description": "Pursuing a technology-driven curriculum with hands-on projects in frontend development, UI systems, and modern web engineering.",
+    "logo": "/educationLogos/bachelor.svg",
+    "score": "8.45 CGPA",
+    "keyAchievement": "Developed multiple portfolio-grade products "
+  }
+]

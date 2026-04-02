@@ -1,0 +1,143 @@
+.hero-animation {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 58%;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.82;
+}
+
+.hero-animation__gradient {
+  position: absolute;
+  mix-blend-mode: multiply;
+  filter: blur(58px);
+  opacity: 0.55;
+}
+
+.hero-animation__gradient--first {
+  top: 8%;
+  left: -10%;
+  width: 26rem;
+  height: 26rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 164, 84, 0.42) 0%, rgba(255, 164, 84, 0.16) 44%, transparent 72%);
+  animation: hero-move-vertical 30s ease infinite;
+}
+
+.hero-animation__gradient--second {
+  top: 18%;
+  left: 24%;
+  width: 20rem;
+  height: 20rem;
+  transform-origin: center center;
+  border-radius: 46% 54% 58% 42%;
+  background: radial-gradient(circle, rgba(255, 122, 26, 0.26) 0%, rgba(255, 122, 26, 0.08) 52%, transparent 72%);
+  animation: hero-move-circle 20s reverse infinite;
+}
+
+.hero-animation__gradient--third {
+  bottom: 2%;
+  left: 8%;
+  width: 22rem;
+  height: 22rem;
+  transform-origin: center center;
+  border-radius: 58% 42% 44% 56%;
+  background: radial-gradient(circle, rgba(255, 188, 142, 0.34) 0%, rgba(255, 188, 142, 0.1) 50%, transparent 74%);
+  animation: hero-move-circle 40s linear infinite;
+}
+
+.hero-animation__gradient--fourth {
+  top: 42%;
+  left: -12%;
+  width: 34rem;
+  height: 18rem;
+  border-radius: 999px;
+  background: radial-gradient(circle at center, rgba(255, 122, 26, 0.18) 0%, rgba(255, 122, 26, 0.06) 48%, transparent 74%);
+  animation: hero-move-horizontal 40s ease infinite;
+}
+
+.hero-animation__gradient--fifth {
+  top: -8%;
+  left: 32%;
+  width: 14rem;
+  height: 14rem;
+  transform-origin: center center;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0.06) 46%, transparent 72%);
+  animation: hero-move-circle 20s ease infinite;
+}
+
+.hero-animation__noise {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.04), transparent 40%),
+    radial-gradient(circle at 18% 24%, rgba(255, 122, 26, 0.08), transparent 22%);
+  opacity: 0.7;
+}
+
+@keyframes hero-move-horizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+
+@keyframes hero-move-circle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hero-move-vertical {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  50% {
+    transform: translateY(50%);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 1080px) {
+  .hero-animation {
+    width: 100%;
+    height: 48%;
+    opacity: 0.72;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-animation {
+    height: 42%;
+  }
+
+  .hero-animation__gradient--first {
+    width: 18rem;
+    height: 18rem;
+  }
+
+  .hero-animation__gradient--fourth {
+    width: 24rem;
+  }
+}

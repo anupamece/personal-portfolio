@@ -1,0 +1,54 @@
+{
+  "majorProjects": [
+    {
+      "id": 1,
+      "title": "Portfolio Experience Platform",
+      "description": "A personal portfolio system with animated storytelling, bold section transitions, and reusable UI components for showcasing work and achievements.",
+      "image": "/projectShots/major-1.svg",
+      "exploreLink": "#",
+      "githubLink": "https://github.com/"
+    },
+    {
+      "id": 2,
+      "title": "Campus Event Management App",
+      "description": "A responsive web app for browsing, registering, and managing student events with role-based dashboards and optimized event discovery flows.",
+      "image": "/projectShots/major-2.svg",
+      "exploreLink": "#",
+      "githubLink": "https://github.com/"
+    },
+    {
+      "id": 3,
+      "title": "Creative Agency Showcase",
+      "description": "A high-impact showcase website built with immersive layouts, polished motion, and a conversion-focused structure for digital studio presentation.",
+      "image": "/projectShots/major-3.svg",
+      "exploreLink": "#",
+      "githubLink": "https://github.com/"
+    }
+  ],
+  "minorProjects": [
+    {
+      "id": 1,
+      "title": "Weather Pulse",
+      "description": "A compact weather interface for current conditions and forecast highlights with a clean, mobile-friendly layout.",
+      "image": "/projectShots/minor-1.svg",
+      "exploreLink": "#",
+      "githubLink": "https://github.com/"
+    },
+    {
+      "id": 2,
+      "title": "Task Sprint",
+      "description": "A lightweight productivity tool for organizing daily tasks with priorities, states, and quick action controls.",
+      "image": "/projectShots/minor-2.svg",
+      "exploreLink": "#",
+      "githubLink": "https://github.com/"
+    },
+    {
+      "id": 3,
+      "title": "Notes Vault",
+      "description": "A simple note-keeping app with category filters and a focused reading and editing experience.",
+      "image": "/projectShots/minor-3.svg",
+      "exploreLink": "#",
+      "githubLink": "https://github.com/"
+    }
+  ]
+}

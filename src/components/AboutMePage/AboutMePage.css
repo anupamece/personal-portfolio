@@ -1,0 +1,12 @@
+.about-me-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #111111, #050505);
+}
+
+.about-me-page__nav {
+  padding: 2rem 3rem 0;
+}
+
+.about-me-page__content {
+  min-height: calc(100vh - 110px);
+}
