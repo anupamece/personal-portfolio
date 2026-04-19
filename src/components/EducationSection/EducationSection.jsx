@@ -1,5 +1,7 @@
+import { motion } from 'framer-motion'
 import educationData from '../../../educationData.json'
 import './EducationSection.css'
+import { deckUnfold, fadeUp, staggerParent, viewportLate } from '../../utils/motion'
 
 const getInstituteLogo = (index) => {
   if (index < 2) {
@@ -11,22 +13,31 @@ const getInstituteLogo = (index) => {
 
 function EducationSection() {
   return (
-    <section className="education-section" id="home-next-section">
-      <div className="education-section__header">
-        <span className="education-section__eyebrow">Academic Journey</span>
-        <h2>Education-Background</h2>
-        <p>
+    <motion.section
+      className="education-section"
+      id="home-next-section"
+      variants={staggerParent}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportLate}
+    >
+      <motion.div className="education-section__header" variants={fadeUp}>
+        <motion.span className="education-section__eyebrow" variants={fadeUp}>Academic Journey</motion.span>
+        <motion.h2 variants={fadeUp}>Education-Background</motion.h2>
+        <motion.p variants={fadeUp}>
           A quick walkthrough of the institutions and milestones that shaped my
           learning path.
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
-      <div className="education-timeline" aria-label="Education timeline">
+      <motion.div className="education-timeline" aria-label="Education timeline">
         <div className="education-timeline__line" />
         {educationData.map((item, index) => (
-          <article
+          <motion.article
             key={item.id}
             className={`education-card ${index % 2 === 0 ? 'education-card--top' : 'education-card--bottom'}`}
+            variants={deckUnfold}
+            custom={index}
           >
             <span className="education-card__node" aria-hidden="true" />
             <div className="education-card__stage-shell">
@@ -60,10 +71,10 @@ function EducationSection() {
                 <p>{item.keyAchievement}</p>
               </div>
             </div>
-          </article>
+          </motion.article>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   )
 }
 

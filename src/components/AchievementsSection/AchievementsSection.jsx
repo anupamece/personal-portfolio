@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import {
   FaCode,
   FaLaptopCode,
@@ -8,6 +9,7 @@ import {
 } from 'react-icons/fa6'
 import { FiArrowUpRight } from 'react-icons/fi'
 import './AchievementsSection.css'
+import { fadeUp, riseFromBehind, staggerParent, viewportLate } from '../../utils/motion'
 
 const achievements = [
   {
@@ -76,19 +78,26 @@ const achievements = [
 
 function AchievementsSection() {
   return (
-    <section className="achievements-section" id="achievements-section">
-      <div className="achievements-section__header">
-        <span className="achievements-section__eyebrow">Competitive Profile</span>
-        <h2>Achievements Section</h2>
-        <p>
+    <motion.section
+      className="achievements-section"
+      id="achievements-section"
+      variants={staggerParent}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportLate}
+    >
+      <motion.div className="achievements-section__header" variants={fadeUp}>
+        <motion.span className="achievements-section__eyebrow" variants={fadeUp}>Competitive Profile</motion.span>
+        <motion.h2 variants={fadeUp}>Achievements Section</motion.h2>
+        <motion.p variants={fadeUp}>
           Milestones from coding contests, practice platforms, and hackathons
           that reflect consistency, growth, and competitive problem solving.
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
-      <div className="achievements-grid" aria-label="Achievements list">
-        {achievements.map((obj) => (
-          <article className="achievement-card" key={obj.id}>
+      <motion.div className="achievements-grid" aria-label="Achievements list">
+        {achievements.map((obj, index) => (
+          <motion.article className="achievement-card" key={obj.id} variants={riseFromBehind} custom={index}>
             <div className="achievement-card__icon-shell" aria-hidden="true">
               <obj.Icon className="achievement-card__icon" style={{ color: obj.color }} />
             </div>
@@ -106,10 +115,10 @@ function AchievementsSection() {
                 <FiArrowUpRight />
               </a>
             </div>
-          </article>
+          </motion.article>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   )
 }
 

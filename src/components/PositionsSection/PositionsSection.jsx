@@ -1,5 +1,7 @@
-import { FaBolt, FaGlobe } from 'react-icons/fa6'
+import { motion } from 'framer-motion'
+import { FaBolt } from 'react-icons/fa6'
 import './PositionsSection.css'
+import { fadeUp, sideReveal, staggerParent, viewportLate } from '../../utils/motion'
 
 const positions = [
   {
@@ -34,20 +36,27 @@ const positions = [
 
 function PositionsSection() {
   return (
-    <section className="positions-section" id="positions-section">
-      <div className="positions-section__header">
-        <span className="positions-section__eyebrow">Leadership & Ownership</span>
-        <h2>Positions & Responsibilities</h2>
-        <p>
+    <motion.section
+      className="positions-section"
+      id="positions-section"
+      variants={staggerParent}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportLate}
+    >
+      <motion.div className="positions-section__header" variants={fadeUp}>
+        <motion.span className="positions-section__eyebrow" variants={fadeUp}>Leadership & Ownership</motion.span>
+        <motion.h2 variants={fadeUp}>Positions & Responsibilities</motion.h2>
+        <motion.p variants={fadeUp}>
           A view into the roles I have taken on and the responsibilities I have
           handled while building projects, working with teams, and contributing
           to technical communities.
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
-      <div className="positions-grid" aria-label="Positions and responsibilities">
-        {positions.map(({ id, title, organization, period, description, responsibilities, Icon }) => (
-          <article className="position-card" key={id}>
+      <motion.div className="positions-grid" aria-label="Positions and responsibilities">
+        {positions.map(({ id, title, organization, period, description, responsibilities, Icon }, index) => (
+          <motion.article className="position-card" key={id} variants={sideReveal} custom={index}>
             <div className="position-card__icon-shell" aria-hidden="true">
               {typeof Icon === 'string' ? (
                 <img src={Icon} alt={title} className="position-card__icon position-card__icon--image" />
@@ -69,10 +78,10 @@ function PositionsSection() {
                 <li key={item}>{item}</li>
               ))}
             </ul>
-          </article>
+          </motion.article>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   )
 }
 

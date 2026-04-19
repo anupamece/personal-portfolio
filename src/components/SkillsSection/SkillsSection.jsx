@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import {
   SiBootstrap,
   SiCplusplus,
@@ -13,6 +14,7 @@ import {
 import { FaBrain, FaCss3Alt, FaPeopleCarryBox, FaUsers } from 'react-icons/fa6'
 import { MdOutlineSchedule, MdPsychology } from 'react-icons/md'
 import './SkillsSection.css'
+import { deckUnfold, fadeUp, staggerFast, staggerParent, viewportLate } from '../../utils/motion'
 
 const skillGroups = [
   {
@@ -51,33 +53,40 @@ const skillGroups = [
 
 function SkillsSection() {
   return (
-    <section className="skills-section" id="skills-section">
-      <div className="skills-section__header">
-        <span className="skills-section__eyebrow">Skill Matrix</span>
-        <h2>Technical and Professional Skills</h2>
-        <p>
+    <motion.section
+      className="skills-section"
+      id="skills-section"
+      variants={staggerParent}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportLate}
+    >
+      <motion.div className="skills-section__header" variants={fadeUp}>
+        <motion.span className="skills-section__eyebrow" variants={fadeUp}>Skill Matrix</motion.span>
+        <motion.h2 variants={fadeUp}>Technical and Professional Skills</motion.h2>
+        <motion.p variants={fadeUp}>
           The technologies I build with and the core strengths I bring to product teams.
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
-      <div className="skills-groups" aria-label="Skills grouped by category">
-        {skillGroups.map((group) => (
-          <article className="skills-group" key={group.title}>
+      <motion.div className="skills-groups" aria-label="Skills grouped by category" variants={staggerFast}>
+        {skillGroups.map((group, index) => (
+          <motion.article className="skills-group" key={group.title} variants={deckUnfold} custom={index}>
             <h3>{group.title}</h3>
-            <div className="skills-group__grid">
+            <motion.div className="skills-group__grid" variants={staggerFast}>
               {group.items.map(({ name, Icon, color }) => (
-                <div className="skill-pill" key={name}>
+                <motion.div className="skill-pill" key={name} variants={fadeUp}>
                   <span className="skill-pill__icon" aria-hidden="true" style={{ color }}>
                     <Icon />
                   </span>
                   <span className="skill-pill__label">{name}</span>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </article>
+            </motion.div>
+          </motion.article>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   )
 }
 

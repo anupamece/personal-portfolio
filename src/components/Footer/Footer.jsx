@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import {
   FiGithub,
   FiInstagram,
@@ -6,6 +7,7 @@ import {
 } from 'react-icons/fi'
 import { FaDribbble, FaXTwitter } from 'react-icons/fa6'
 import './Footer.css'
+import { fadeUp, staggerFast, staggerParent, viewportOnce } from '../../utils/motion'
 
 const socialLinks = [
   { label: 'GitHub', href: '#', Icon: FiGithub },
@@ -18,29 +20,36 @@ const socialLinks = [
 
 function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer__inner">
-        <div className="footer__copy">
-          <h3>Anupam Poddar</h3>
-          <p>Frontend-focused builder crafting clean interfaces and sharp digital experiences.</p>
-        </div>
+    <motion.footer
+      className="footer"
+      variants={staggerParent}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+    >
+      <motion.div className="footer__inner" variants={fadeUp}>
+        <motion.div className="footer__copy" variants={fadeUp}>
+          <motion.h3 variants={fadeUp}>Anupam Poddar</motion.h3>
+          <motion.p variants={fadeUp}>Frontend-focused builder crafting clean interfaces and sharp digital experiences.</motion.p>
+        </motion.div>
 
-        <div className="footer__socials" aria-label="Footer social links">
+        <motion.div className="footer__socials" aria-label="Footer social links" variants={staggerFast}>
           {socialLinks.map(({ label, href, Icon }) => (
-            <a
+            <motion.a
               key={label}
               className="footer__social-link"
               href={href}
               aria-label={label}
               target="_blank"
               rel="noreferrer"
+              variants={fadeUp}
             >
               <Icon />
-            </a>
+            </motion.a>
           ))}
-        </div>
-      </div>
-    </footer>
+        </motion.div>
+      </motion.div>
+    </motion.footer>
   )
 }
 

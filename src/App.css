@@ -1,3 +1,177 @@
 .app {
   min-height: 100vh;
+  background: var(--app-background);
+}
+
+:root[data-theme='dark'] .hero {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 122, 26, 0.16), transparent 24%),
+    linear-gradient(110deg, #121212 0%, #0c0c0c 56%, #070707 56%, #030303 100%);
+}
+
+:root[data-theme='dark'] .hero::before {
+  background:
+    radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.04), transparent 20%),
+    linear-gradient(
+      100deg,
+      transparent 0,
+      transparent 62.8%,
+      rgba(255, 122, 26, 0.14) 63.2%,
+      rgba(255, 255, 255, 0.05) 63.9%,
+      #050505 64.4%,
+      #050505 100%
+    );
+}
+
+:root[data-theme='dark'] .hero__eyebrow {
+  color: var(--accent-soft);
+}
+
+:root[data-theme='dark'] .hero h1,
+:root[data-theme='dark'] .hero__description,
+:root[data-theme='dark'] .hero__button--ghost,
+:root[data-theme='dark'] .socials__link {
+  color: var(--text-primary);
+}
+
+:root[data-theme='dark'] .hero__title {
+  color: rgba(255, 255, 255, 0.56);
+}
+
+:root[data-theme='dark'] .hero__description {
+  color: var(--text-secondary);
+}
+
+:root[data-theme='dark'] .hero__button--ghost {
+  border-color: var(--border-soft);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+:root[data-theme='dark'] .socials__link {
+  border-color: var(--border-soft);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme='dark'] .education-section,
+:root[data-theme='dark'] .projects-section,
+:root[data-theme='dark'] .positions-section {
+  background:
+    radial-gradient(circle at 86% 16%, rgba(255, 122, 26, 0.1), transparent 18%),
+    var(--section-dark-alt);
+}
+
+:root[data-theme='dark'] .skills-section,
+:root[data-theme='dark'] .achievements-section,
+:root[data-theme='dark'] .contact-section,
+:root[data-theme='dark'] .footer {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(255, 122, 26, 0.12), transparent 20%),
+    var(--section-dark);
+}
+
+:root[data-theme='dark'] .education-section::before,
+:root[data-theme='dark'] .skills-section::before,
+:root[data-theme='dark'] .projects-section::before,
+:root[data-theme='dark'] .achievements-section::before,
+:root[data-theme='dark'] .positions-section::before,
+:root[data-theme='dark'] .contact-section::before {
+  background:
+    radial-gradient(circle at 20% 16%, rgba(255, 255, 255, 0.08), transparent 18%),
+    radial-gradient(circle at 78% 18%, rgba(255, 122, 26, 0.08), transparent 22%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(96, 96, 96, 0.16) 54%, transparent 100%);
+}
+
+:root[data-theme='dark'] .education-section h2,
+:root[data-theme='dark'] .projects-section h2,
+:root[data-theme='dark'] .positions-section h2 {
+  color: var(--text-primary);
+}
+
+:root[data-theme='dark'] .education-section__header p,
+:root[data-theme='dark'] .projects-section__header p,
+:root[data-theme='dark'] .positions-section__header p,
+:root[data-theme='dark'] .skills-section__header p,
+:root[data-theme='dark'] .achievements-section__header p,
+:root[data-theme='dark'] .contact-section p,
+:root[data-theme='dark'] .footer__copy p {
+  color: var(--text-secondary);
+}
+
+:root[data-theme='dark'] .projects-row,
+:root[data-theme='dark'] .position-card,
+:root[data-theme='dark'] .skills-group,
+:root[data-theme='dark'] .achievement-card,
+:root[data-theme='dark'] .contact-section__inner,
+:root[data-theme='dark'] .footer__social-link {
+  border-color: var(--border-soft);
+  background: var(--surface-secondary);
+  box-shadow: var(--shadow-primary);
+}
+
+:root[data-theme='dark'] .project-card,
+:root[data-theme='dark'] .education-card__content,
+:root[data-theme='dark'] .contact-visual__window {
+  border-color: var(--border-soft);
+  background: var(--surface-primary);
+}
+
+:root[data-theme='dark'] .projects-row__header h3,
+:root[data-theme='dark'] .position-card h3,
+:root[data-theme='dark'] .project-card__content h4,
+:root[data-theme='dark'] .education-card h3 {
+  color: var(--text-primary);
+}
+
+:root[data-theme='dark'] .position-card__description,
+:root[data-theme='dark'] .position-card__list li,
+:root[data-theme='dark'] .project-card__content p,
+:root[data-theme='dark'] .achievement-card p,
+:root[data-theme='dark'] .education-card__achievement p,
+:root[data-theme='dark'] .education-card h4,
+:root[data-theme='dark'] .achievement-card__snippet-code {
+  color: var(--text-secondary);
+}
+
+:root[data-theme='dark'] .position-card__meta,
+:root[data-theme='dark'] .education-card__meta {
+  color: var(--text-muted);
+}
+
+:root[data-theme='dark'] .position-card__icon-shell,
+:root[data-theme='dark'] .contact-visual__mini-card,
+:root[data-theme='dark'] .contact-visual__snippet,
+:root[data-theme='dark'] .contact-visual__float-card,
+:root[data-theme='dark'] .skill-pill,
+:root[data-theme='dark'] .contact-form__field input,
+:root[data-theme='dark'] .contact-form__field textarea {
+  border-color: var(--border-soft);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+:root[data-theme='dark'] .skill-pill__label,
+:root[data-theme='dark'] .contact-form__field span,
+:root[data-theme='dark'] .contact-form__field input,
+:root[data-theme='dark'] .contact-form__field textarea,
+:root[data-theme='dark'] .contact-visual__snippet-code,
+:root[data-theme='dark'] .contact-visual__float-code,
+:root[data-theme='dark'] .scroll-indicator__button {
+  color: var(--text-primary);
+}
+
+:root[data-theme='dark'] .contact-form__field input::placeholder,
+:root[data-theme='dark'] .contact-form__field textarea::placeholder {
+  color: var(--text-muted);
+}
+
+:root[data-theme='dark'] .footer {
+  border-top-color: var(--border-soft);
+}
+
+@media (max-width: 1080px) {
+  :root[data-theme='dark'] .hero {
+    background:
+      radial-gradient(circle at 10% 14%, rgba(255, 122, 26, 0.16), transparent 24%),
+      linear-gradient(180deg, #101010 0%, #080808 58%, #040404 100%);
+  }
 }
