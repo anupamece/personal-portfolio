@@ -221,7 +221,7 @@
 
   .nav__toggle {
     display: inline-flex;
-    order: 2;
+    order: 4;
   }
 
   .nav {

@@ -276,6 +276,15 @@
 }
 
 @media (max-width: 640px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero__panel--visual {
+    order: -1;
+  }
+
   .hero__panel--content {
     padding: 0.5rem 1rem 1rem;
   }
@@ -291,6 +300,10 @@
 
   .hero__button {
     width: 100%;
+    min-width: 0;
+    padding: 0.78rem 1rem;
+    font-size: 0.76rem;
+    letter-spacing: 0.06em;
   }
 
   .socials__link {
@@ -304,10 +317,11 @@
   }
 
   .hero__panel--visual {
-    padding: 1rem 1rem 0;
+    min-height: auto;
+    padding: 1rem 1rem 0.25rem;
   }
 
   .hero__image-ring {
-    width: min(78vw, 360px);
+    width: min(72vw, 320px);
   }
 }
