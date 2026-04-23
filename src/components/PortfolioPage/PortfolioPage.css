@@ -1,6 +1,6 @@
 .portfolio-page {
   min-height: 100vh;
-  background: #c3c3c3;
+  background: var(--app-background);
 }
 
 .portfolio-page__nav {

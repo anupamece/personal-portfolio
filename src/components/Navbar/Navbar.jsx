@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import './Navbar.css'
-import { fadeUp, navbarReveal, staggerFast } from '../../utils/motion'
+import { fadeUp, staggerFast } from '../../utils/motion'
 
 const navItems = [
   { label: 'Home', targetId: 'home' },
@@ -14,7 +14,7 @@ const navItems = [
 
 const ALL_SECTION_IDS = [...navItems.map((item) => item.targetId), 'contact-section']
 
-function Navbar({ theme, onToggleTheme }) {
+function Navbar() {
   const [activeSection, setActiveSection] = useState('home')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const scrollFrameRef = useRef(null)
@@ -30,7 +30,7 @@ function Navbar({ theme, onToggleTheme }) {
     }
 
     const updateActiveSection = () => {
-      const navbarHeight = document.querySelector('.navbar')?.getBoundingClientRect().height ?? 0
+      const navbarHeight = document.querySelector('.site-navbar')?.getBoundingClientRect().height ?? 0
       const scrollThreshold = navbarHeight + 24
       let currentSectionId = sections[0].id
 
@@ -85,7 +85,7 @@ function Navbar({ theme, onToggleTheme }) {
     e.preventDefault()
     const el = document.getElementById(targetId)
     if (!el) return
-    const navbarHeight = document.querySelector('.navbar')?.getBoundingClientRect().height ?? 0
+    const navbarHeight = document.querySelector('.site-navbar')?.getBoundingClientRect().height ?? 0
     const top = el.getBoundingClientRect().top + window.scrollY - navbarHeight
     window.scrollTo({ top, behavior: 'smooth' })
     setActiveSection(targetId)
@@ -93,13 +93,8 @@ function Navbar({ theme, onToggleTheme }) {
   }
 
   return (
-    <motion.header
-      className="navbar"
-      variants={navbarReveal}
-      initial="hidden"
-      animate="visible"
-    >
-      <div className="navbar__inner">
+    <header className="site-navbar">
+      <div className="site-navbar__inner">
         <motion.a
           className="brand"
           href="#home"
@@ -118,20 +113,20 @@ function Navbar({ theme, onToggleTheme }) {
 
         <button
           type="button"
-          className={`nav__toggle ${isMenuOpen ? 'nav__toggle--open' : ''}`}
+          className={`site-nav__toggle ${isMenuOpen ? 'site-nav__toggle--open' : ''}`}
           aria-label="Toggle navigation menu"
           aria-expanded={isMenuOpen}
           aria-controls="primary-navigation"
           onClick={() => setIsMenuOpen((prev) => !prev)}
         >
-          <span className="nav__toggle-line" />
-          <span className="nav__toggle-line" />
-          <span className="nav__toggle-line" />
+          <span className="site-nav__toggle-line" />
+          <span className="site-nav__toggle-line" />
+          <span className="site-nav__toggle-line" />
         </button>
 
         <motion.nav
           id="primary-navigation"
-          className={`nav ${isMenuOpen ? 'nav--open' : ''}`}
+          className={`site-nav ${isMenuOpen ? 'site-nav--open' : ''}`}
           aria-label="Primary navigation"
           variants={staggerFast}
           initial="hidden"
@@ -163,23 +158,8 @@ function Navbar({ theme, onToggleTheme }) {
           </motion.a>
         </motion.nav>
 
-        <motion.button
-          type="button"
-          className="theme-switch"
-          onClick={onToggleTheme}
-          aria-label={`Switch to ${theme === 'dark' ? 'classic' : 'dark'} theme`}
-          variants={fadeUp}
-          custom={0.28}
-          initial="hidden"
-          animate="visible"
-        >
-          <span className="theme-switch__label">{theme === 'dark' ? 'Dark' : 'Classic'}</span>
-          <span className={`theme-switch__track theme-switch__track--${theme}`}>
-            <span className="theme-switch__thumb" />
-          </span>
-        </motion.button>
       </div>
-    </motion.header>
+    </header>
   )
 }
 

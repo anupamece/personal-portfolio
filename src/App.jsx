@@ -12,14 +12,6 @@ import ContactSection from './components/ContactSection/ContactSection'
 import Footer from './components/Footer/Footer'
 import PreLoader from './components/PreLoader/PreLoader'
 function App() {
-  const [theme, setTheme] = useState(() => {
-    if (typeof window === 'undefined') {
-      return 'dark'
-    }
-
-    return window.localStorage.getItem('portfolio-theme') || 'dark'
-  })
-
   const [loading, setLoading] = useState(true);
 
   useEffect(()=>{
@@ -30,20 +22,11 @@ function App() {
     return () => clearTimeout(timer);
 },[]);
 
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-    window.localStorage.setItem('portfolio-theme', theme)
-  }, [theme])
-
-  const toggleTheme = () => {
-    setTheme((current) => (current === 'dark' ? 'classic' : 'dark'))
-  }
-
   return (
     <>
       {loading ? <PreLoader duration={3000}/> : (
         <>
-          <Navbar theme={theme} onToggleTheme={toggleTheme} />
+          <Navbar />
           <main className="app">
             <HeroSection />
             <ScrollIndicator targetId="home-next-section" />

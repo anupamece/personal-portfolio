@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import HeroAnimation from '../HeroAnimation/HeroAnimation'
 import './HeroSection.css'
 import { SiGmail } from "react-icons/si"
-import { FaGithub, FaLinkedin } from "react-icons/fa"
+import { FaArrowDown, FaGithub, FaLinkedin } from "react-icons/fa"
 import { fadeUp, staggerFast, staggerParent, viewportOnce } from '../../utils/motion'
 
 function HeroSection() {
@@ -28,10 +28,11 @@ function HeroSection() {
             </motion.p>
 
             <motion.div className="hero__actions" variants={staggerFast}>
-              <motion.a className="hero__button hero__button--primary" href="#portfolio-section" variants={fadeUp}>
-                View Portfolio
+              <motion.a className="hero__button hero__button--primary" href="https://drive.google.com/file/d/1OOJ7ZMQ6dWw_rFHcaNJcOnMYg83z5NA7/view?usp=drive_link" target='_blank' variants={fadeUp}>
+                Download CV
+                <FaArrowDown className='hero__button-icon' aria-hidden='true' />
               </motion.a>
-              <motion.a className="hero__button hero__button--ghost" href="#contact-section" variants={fadeUp}>
+              <motion.a className="hero__button hero__button--ghost" href="#contact-section" variants={fadeUp} >
                 Let&apos;s Talk
               </motion.a>
             </motion.div>
@@ -78,7 +79,7 @@ function HeroSection() {
             <div className="hero__image-wrap">
               <img
                 className="hero__image"
-                src="/heroImg/hero.png"
+                src="/heroImg/heroImg.png"
                 alt="Portrait of Anupam Poddar"
               />
             </div>
