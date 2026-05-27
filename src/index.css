@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=Manrope:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Syne:wght@400;500;700;800&family=Manrope:wght@400;500;600;700&display=swap');
+
 
 :root {
   font-family: 'Manrope', sans-serif;
@@ -9,9 +10,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #f5f1ea;
-  background: #060606;
+  background: #050505;
   --navbar-height: 5.75rem;
-  --app-background: linear-gradient(180deg, #090909 0%, #050505 100%);
+  --app-background: #050505;
   --surface-primary: linear-gradient(155deg, rgba(255, 122, 26, 0.08), rgba(9, 9, 9, 0.98) 40%, rgba(0, 0, 0, 0.98) 100%);
   --surface-secondary: linear-gradient(145deg, rgba(255, 122, 26, 0.1), rgba(10, 10, 10, 0.98) 54%, rgba(2, 2, 2, 0.98) 100%);
   --surface-glass: rgba(0, 0, 0, 0.18);
@@ -27,8 +28,8 @@
   --border-soft: rgba(255, 255, 255, 0.1);
   --border-strong: rgba(255, 122, 26, 0.24);
   --shadow-primary: 0 22px 44px rgba(0, 0, 0, 0.28);
-  --section-dark: linear-gradient(180deg, #080808 0%, #050505 100%);
-  --section-dark-alt: linear-gradient(180deg, #090909 0%, #050505 100%);
+  --section-dark: transparent;
+  --section-dark-alt: transparent;
 }
 
 * {

@@ -40,36 +40,20 @@ function EducationSection() {
             custom={index}
           >
             <span className="education-card__node" aria-hidden="true" />
-            <div className="education-card__stage-shell">
-              <img
-                className="education-card__stage-logo"
-                src={item.logo}
-                alt={`${item.level} stage icon`}
-              />
-            </div>
 
             <div className="education-card__content">
               <h3>{item.level}</h3>
-
-              <div className="education-card__logo-shell">
+              <div className="education-card__logo-wrapper">
                 <img
-                  className="education-card__logo"
                   src={getInstituteLogo(index)}
                   alt={`${item.institute} logo`}
+                  className="education-card__logo-img"
+                  loading="lazy"
                 />
               </div>
-
+              <span className="education-card__period">{item.period}</span>
               <h4>{item.institute}</h4>
-
-              <div className="education-card__meta">
-                <span className="education-card__period">{item.period}</span>
-                <span className="education-card__score">{item.score}</span>
-              </div>
-
-              <div className="education-card__achievement">
-                <span>Key Achievement</span>
-                <p>{item.keyAchievement}</p>
-              </div>
+              <span className="education-card__score">{item.score}</span>
             </div>
           </motion.article>
         ))}

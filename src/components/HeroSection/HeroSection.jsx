@@ -1,9 +1,14 @@
 import { motion } from 'framer-motion'
 import HeroAnimation from '../HeroAnimation/HeroAnimation'
+import HeroFloatingIcons from './HeroFloatingIcons'
+import HeroVisualPortal from './HeroVisualPortal'
 import './HeroSection.css'
 import { SiGmail } from "react-icons/si"
 import { FaArrowDown, FaGithub, FaLinkedin } from "react-icons/fa"
 import { fadeUp, staggerFast, staggerParent, viewportOnce } from '../../utils/motion'
+import { Link } from 'react-router-dom'
+
+const MotionLink = motion(Link)
 
 function HeroSection() {
   return (
@@ -16,28 +21,31 @@ function HeroSection() {
       viewport={viewportOnce}
     >
         <HeroAnimation />
+        <HeroFloatingIcons />
 
         <motion.div className="hero__panel hero__panel--content" variants={fadeUp}>
           <motion.div className="hero__content" variants={staggerParent}>
-            <motion.span className="hero__eyebrow" variants={fadeUp}>Hi, I am</motion.span>
+            <motion.span className="hero__eyebrow" variants={fadeUp}>Hii, I&apos;m</motion.span>
             <motion.h1 variants={fadeUp}>Anupam Poddar</motion.h1>
-            <motion.p className="hero__title" variants={fadeUp}>Frontend Developer / UI Designer</motion.p>
+            <motion.p className="hero__title" variants={fadeUp}>
+              Full-Stack Developer <span className="hero__title-sep">//</span> UI Designer
+            </motion.p>
             <motion.p className="hero__description" variants={fadeUp}>
-              I craft sharp, modern interfaces with a strong visual identity,
-              blending thoughtful user experience with clean front-end execution.
+              I engineer scalable, high-performance web applications and design immersive digital products.
+              Blending technical precision with aesthetic mastery to create web experiences that are not just functional, but unforgettable.
             </motion.p>
 
-            <motion.div className="hero__actions" variants={staggerFast}>
+            <div className="hero__actions">
               <motion.a className="hero__button hero__button--primary" href="https://drive.google.com/file/d/1OOJ7ZMQ6dWw_rFHcaNJcOnMYg83z5NA7/view?usp=drive_link" target='_blank' variants={fadeUp}>
                 Download CV
                 <FaArrowDown className='hero__button-icon' aria-hidden='true' />
               </motion.a>
-              <motion.a className="hero__button hero__button--ghost" href="#contact-section" variants={fadeUp} >
-                Let&apos;s Talk
-              </motion.a>
-            </motion.div>
+              <MotionLink className="hero__button hero__button--ghost" to="/about" variants={fadeUp}>
+                About Me
+              </MotionLink>
+            </div>
 
-            <motion.div className="socials" aria-label="Social links" variants={staggerFast}>
+            <div className="socials" aria-label="Social links">
               <motion.a
                 className="socials__link"
                 href="mailto:anupam@example.com"
@@ -68,22 +76,12 @@ function HeroSection() {
               >
                 <FaLinkedin className='social_icon'/>
               </motion.a>
-            </motion.div>
+            </div>
           </motion.div>
         </motion.div>
 
         <motion.div className="hero__panel hero__panel--visual" variants={fadeUp} custom={0.16}>
-          <div className="hero__visual-overlay" />
-          <motion.div className="hero__badge" variants={fadeUp} custom={0.22}>Available for creative web projects</motion.div>
-          <motion.div className="hero__image-ring" variants={fadeUp} custom={0.28}>
-            <div className="hero__image-wrap">
-              <img
-                className="hero__image"
-                src="/heroImg/heroImg.png"
-                alt="Portrait of Anupam Poddar"
-              />
-            </div>
-          </motion.div>
+          <HeroVisualPortal />
         </motion.div>
       </motion.section>
     )

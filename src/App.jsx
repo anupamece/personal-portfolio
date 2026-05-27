@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import HeroSection from './components/HeroSection/HeroSection'
@@ -11,6 +12,8 @@ import PositionsSection from './components/PositionsSection/PositionsSection'
 import ContactSection from './components/ContactSection/ContactSection'
 import Footer from './components/Footer/Footer'
 import PreLoader from './components/PreLoader/PreLoader'
+import AboutMePage from './components/AboutMePage/AboutMePage'
+
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -23,24 +26,29 @@ function App() {
 },[]);
 
   return (
-    <>
+    <Router>
       {loading ? <PreLoader duration={3000}/> : (
-        <>
-          <Navbar />
-          <main className="app">
-            <HeroSection />
-            <ScrollIndicator targetId="home-next-section" />
-            <EducationSection />
-            <SkillsSection />
-            <ProjectsSection />
-            <AchievementsSection />
-            <PositionsSection />
-            <ContactSection />
-            <Footer />
-          </main>
-        </>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Navbar />
+              <main className="app">
+                <HeroSection />
+                <ScrollIndicator targetId="home-next-section" />
+                <EducationSection />
+                <SkillsSection />
+                <ProjectsSection />
+                <AchievementsSection />
+                <PositionsSection />
+                <ContactSection />
+              </main>
+              <Footer />
+            </>
+          } />
+          <Route path="/about" element={<AboutMePage />} />
+        </Routes>
       )}
-    </>
+    </Router>
   )
 }
 

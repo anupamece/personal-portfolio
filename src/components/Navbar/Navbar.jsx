@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import './Navbar.css'
 import { fadeUp, staggerFast } from '../../utils/motion'
+import { Link } from 'react-router-dom'
+
+const MotionLink = motion(Link)
 
 const navItems = [
   { label: 'Home', targetId: 'home' },
@@ -84,7 +87,10 @@ function Navbar() {
   const handleNavClick = (e, targetId) => {
     e.preventDefault()
     const el = document.getElementById(targetId)
-    if (!el) return
+    if (!el) {
+      window.location.href = `/${targetId === 'home' ? '' : '#' + targetId}`
+      return
+    }
     const navbarHeight = document.querySelector('.site-navbar')?.getBoundingClientRect().height ?? 0
     const top = el.getBoundingClientRect().top + window.scrollY - navbarHeight
     window.scrollTo({ top, behavior: 'smooth' })
@@ -95,21 +101,17 @@ function Navbar() {
   return (
     <header className="site-navbar">
       <div className="site-navbar__inner">
-        <motion.a
+        <Link
           className="brand"
-          href="#home"
+          to="/"
           aria-label="Anupam Poddar home"
-          variants={fadeUp}
-          custom={0.1}
-          initial="hidden"
-          animate="visible"
         >
           <img
             className="brand__logo"
             src="/heroImg/logo.png"
             alt="Anupam Poddar logo"
           />
-        </motion.a>
+        </Link>
 
         <button
           type="button"

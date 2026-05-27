@@ -1,11 +1,11 @@
 export const viewportOnce = {
   once: true,
-  amount: 0.2,
+  amount: 0.1,
 }
 
 export const viewportLate = {
   once: true,
-  amount: 0.4,
+  amount: 0.12,
 }
 
 export const fadeUp = {
