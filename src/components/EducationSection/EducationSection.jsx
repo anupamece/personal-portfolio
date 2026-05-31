@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import educationData from '../../../educationData.json'
+import educationData from '../../data/educationData.json'
 import './EducationSection.css'
 import { deckUnfold, fadeUp, staggerParent, viewportLate } from '../../utils/motion'
 

@@ -45,8 +45,8 @@
 .about-me__back-btn:hover {
   border-color: rgba(255, 122, 26, 0.4);
   background: rgba(255, 122, 26, 0.1);
-  color: var(--accent-soft);
-  transform: translateX(-4px);
+  /* color: var(--accent-soft); */
+  /* transform: translateX(-4px); */
 }
 
 .about-me__back-icon {

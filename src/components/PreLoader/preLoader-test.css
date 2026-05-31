@@ -1,0 +1,214 @@
+/* preLoader-test styles */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+.preloader-test {
+  position: fixed;
+  inset: 0;
+  z-index: 12000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #050505;
+}
+
+/* Backing ambient gradient glow */
+.preloader-test::before {
+  content: '';
+  position: absolute;
+  width: 36rem;
+  height: 36rem;
+  background: radial-gradient(circle, rgba(255, 122, 26, 0.09) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+  animation: preloader-ambient-pulse 5s ease-in-out infinite alternate;
+}
+
+@keyframes preloader-ambient-pulse {
+  0% {
+    transform: scale(0.9) translate3d(0, 0, 0);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.1) translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.preloader-test__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.preloader-test__wordmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  user-select: none;
+}
+
+/* Elegant, thick serif brackets */
+.preloader-test__bracket {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 8vw, 6.5rem);
+  font-weight: 700;
+  color: rgba(255, 122, 26, 0.8);
+  font-style: italic;
+  opacity: 0.85;
+  margin: 0 0.25rem;
+  line-height: 1;
+}
+
+/* Main name styling with thick, premium serif and wide spacing */
+.preloader-test__name {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 7.5vw, 6.2rem);
+  font-weight: 800; /* Beautifully thick and elegant weight */
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-left: 0.14em; /* Offsets last character letter-spacing */
+  line-height: 1;
+}
+
+.preloader-test__outline,
+.preloader-test__fill {
+  grid-area: 1 / 1;
+}
+
+/* Outline state */
+.preloader-test__outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.22);
+  z-index: 1;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Rising fill animation */
+.preloader-test__fill {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  clip-path: inset(100% 0 0 0);
+  animation: preloader-fill-rise var(--preloader-duration) cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.preloader-test__fill--base {
+  z-index: 2;
+  background-image: linear-gradient(180deg, #ffffff 0%, #ffbe85 55%, #ff7a1a 100%);
+}
+
+/* Overlay glowing glow-text */
+.preloader-test__fill--glow {
+  z-index: 3;
+  opacity: 0.85;
+  background-image: linear-gradient(180deg, #ffffff 0%, #ffbe85 55%, #ff7a1a 100%);
+  filter: blur(6px);
+  animation: 
+    preloader-fill-rise var(--preloader-duration) cubic-bezier(0.25, 1, 0.5, 1) forwards,
+    preloader-fill-glow-shimmer 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes preloader-fill-rise {
+  0% {
+    clip-path: inset(100% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0% 0 0 0);
+  }
+}
+
+@keyframes preloader-fill-glow-shimmer {
+  0% {
+    opacity: 0.55;
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 0.9;
+    filter: blur(9px);
+  }
+}
+
+/* Minimalist Progress Line */
+.preloader-test__progress-bar {
+  width: clamp(180px, 35vw, 320px);
+  height: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.preloader-test__progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff7a1a, #ffbe85);
+  box-shadow: 0 0 10px rgba(255, 122, 26, 0.6);
+  animation: preloader-progress-rise var(--preloader-duration) cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes preloader-progress-rise {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Status details container */
+.preloader-test__status {
+  display: flex;
+  justify-content: space-between;
+  width: clamp(180px, 35vw, 320px);
+  margin-top: 0.65rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.35);
+  user-select: none;
+}
+
+.preloader-test__status-text {
+  text-transform: uppercase;
+}
+
+.preloader-test__status-percentage {
+  color: rgba(255, 122, 26, 0.8);
+  font-weight: 600;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 640px) {
+  .preloader-test__bracket {
+    font-size: clamp(2rem, 9vw, 3.5rem);
+  }
+
+  .preloader-test__name {
+    font-size: clamp(1.8rem, 8.5vw, 3.2rem);
+    letter-spacing: 0.12em;
+    margin-left: 0.12em;
+  }
+  
+  .preloader-test__outline {
+    -webkit-text-stroke-width: 1px;
+  }
+
+  .preloader-test__progress-bar,
+  .preloader-test__status {
+    width: clamp(160px, 60vw, 240px);
+  }
+}

@@ -14,8 +14,11 @@ import {
   SiExpress,
   SiMongodb,
   SiMysql,
+  SiSocketdotio,
+  SiMongoose,
 } from 'react-icons/si'
 import { FaCss3Alt } from 'react-icons/fa6'
+import { TbApi } from 'react-icons/tb'
 import './SkillsSection.css'
 import { deckUnfold, fadeUp, staggerFast, staggerParent, viewportLate } from '../../utils/motion'
 
@@ -47,6 +50,9 @@ const skillGroups = [
       { name: 'Node.js', Icon: SiNodedotjs, color: '#339933' },
       { name: 'Express.js', Icon: SiExpress, color: '#FFFFFF' },
       { name: 'MongoDB', Icon: SiMongodb, color: '#47A248' },
+      { name: 'Mongoose', Icon: SiMongoose, color: '#880000' },
+      { name: 'REST API', Icon: TbApi, color: '#00BCD4' },
+      { name: 'Socket.io', Icon: SiSocketdotio, color: '#FFFFFF' },
       { name: 'SQL', Icon: SiMysql, color: '#00758F' },
     ],
   },
