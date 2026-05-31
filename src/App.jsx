@@ -11,7 +11,7 @@ import AchievementsSection from './components/AchievementsSection/AchievementsSe
 import PositionsSection from './components/PositionsSection/PositionsSection'
 import ContactSection from './components/ContactSection/ContactSection'
 import Footer from './components/Footer/Footer'
-import PreLoader from './components/PreLoader/preLoader'
+import PreLoader from './components/PreLoader/PreLoader'
 import AboutMePage from './components/AboutMePage/AboutMePage'
 import PortfolioPage from './components/PortfolioPage/PortfolioPage'
 
