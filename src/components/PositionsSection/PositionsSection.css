@@ -17,7 +17,7 @@
 .positions-section__eyebrow {
   display: inline-block;
   margin-bottom: 0.9rem;
-  color: #ff7a1a;
+  color: var(--accent);
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.18em;
@@ -53,9 +53,9 @@
   min-height: 300px;
   padding: 1.35rem;
   border: 1px solid var(--border-soft);
-  border-radius: 28px;
+  border-radius: 0px;
   background:
-    linear-gradient(145deg, rgba(255, 122, 26, 0.1), rgba(10, 10, 10, 0.98) 54%, rgba(2, 2, 2, 0.98) 100%);
+    linear-gradient(145deg, rgba(202, 154, 122, 0.08), rgba(10, 10, 10, 0.98) 54%, rgba(2, 2, 2, 0.98) 100%);
   box-shadow:
     var(--shadow-primary);
   backdrop-filter: blur(12px);
@@ -70,10 +70,10 @@
   overflow: hidden;
   border-radius: 22px;
   background:
-    linear-gradient(145deg, rgba(255, 122, 26, 0.16), rgba(10, 10, 10, 0.86)),
+    linear-gradient(145deg, rgba(202, 154, 122, 0.16), rgba(10, 10, 10, 0.86)),
     rgba(0, 0, 0, 0.18);
   box-shadow:
-    inset 0 1px 0 rgba(255, 122, 26, 0.08),
+    inset 0 1px 0 rgba(202, 154, 122, 0.08),
     0 12px 24px rgba(0, 0, 0, 0.12);
 }
 
@@ -82,7 +82,7 @@
 }
 
 .position-card__icon--glyph {
-  color: #ff7a1a;
+  color: var(--accent);
   font-size: 2.05rem;
   line-height: 1;
 }
@@ -106,7 +106,7 @@
 }
 
 .position-card__org {
-  color: #ff7a1a;
+  color: var(--accent);
 }
 
 .position-card h3 {
@@ -143,8 +143,8 @@
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  background: #ff7a1a;
-  box-shadow: 0 0 0 5px rgba(255, 122, 26, 0.12);
+  background: var(--accent);
+  box-shadow: 0 0 0 5px rgba(202, 154, 122, 0.12);
 }
 
 @media (max-width: 1080px) {

@@ -156,7 +156,7 @@ function Navbar() {
             variants={fadeUp}
             custom={0.22}
           >
-            Contact Me
+            Contact Me &rarr;
           </motion.a>
         </motion.nav>
 

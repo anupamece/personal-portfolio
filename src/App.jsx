@@ -4,6 +4,7 @@ import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import HeroSection from './components/HeroSection/HeroSection'
 import ScrollIndicator from './components/ScrollIndicator/ScrollIndicator'
+import MarqueeStrip from './components/MarqueeStrip/MarqueeStrip'
 import EducationSection from './components/EducationSection/EducationSection'
 import SkillsSection from './components/SkillsSection/SkillsSection'
 import ProjectsSection from './components/ProjectsSection/ProjectsSection'
@@ -35,7 +36,7 @@ function App() {
               <Navbar />
               <main className="app">
                 <HeroSection />
-                <ScrollIndicator targetId="home-next-section" />
+                <MarqueeStrip />
                 <EducationSection />
                 <SkillsSection />
                 <ProjectsSection />

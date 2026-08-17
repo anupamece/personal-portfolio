@@ -36,7 +36,13 @@ function HeroSection() {
             </motion.p>
 
             <div className="hero__actions">
-              <motion.a className="hero__button hero__button--primary" href="https://drive.google.com/file/d/1OOJ7ZMQ6dWw_rFHcaNJcOnMYg83z5NA7/view?usp=drive_link" target='_blank' variants={fadeUp}>
+              <motion.a 
+                className="hero__button hero__button--primary" 
+                href="https://drive.google.com/file/d/1sCiaTNaCFxOBRgl4oLeQ1VpIfgkPgRXw/view?usp=sharing" 
+                target='_blank'
+                rel='noreferrer'
+                variants={fadeUp}
+              >
                 Download CV
                 <FaArrowDown className='hero__button-icon' aria-hidden='true' />
               </motion.a>
@@ -80,9 +86,9 @@ function HeroSection() {
           </motion.div>
         </motion.div>
 
-        <motion.div className="hero__panel hero__panel--visual" variants={fadeUp} custom={0.16}>
+        {/* <motion.div className="hero__panel hero__panel--visual" variants={fadeUp} custom={0.16}>
           <HeroVisualPortal />
-        </motion.div>
+        </motion.div> */}
       </motion.section>
     )
   }

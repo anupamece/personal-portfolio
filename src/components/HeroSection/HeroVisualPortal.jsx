@@ -75,7 +75,7 @@ function HeroVisualPortal() {
         <div className="hero-portal__main-card">
           <div className="hero-portal__image-container">
             <img 
-              src="/heroImg/heroImg.png" 
+              src="/heroImg/heroimage.png" 
               alt="Anupam Poddar" 
               className="hero-portal__image" 
             />

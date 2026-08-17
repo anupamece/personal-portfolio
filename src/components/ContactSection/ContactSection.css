@@ -17,12 +17,12 @@
   align-items: start;
   padding: 1.45rem 1.45rem 1.55rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 28px;
+  border-radius: 0px;
   background:
-    linear-gradient(145deg, rgba(255, 122, 26, 0.08), rgba(11, 11, 11, 0.96) 42%, rgba(0, 0, 0, 0.98) 100%);
+    linear-gradient(145deg, rgba(202, 154, 122, 0.08), rgba(11, 11, 11, 0.96) 42%, rgba(0, 0, 0, 0.98) 100%);
   box-shadow:
     0 24px 42px rgba(0, 0, 0, 0.24),
-    inset 0 1px 0 rgba(255, 122, 26, 0.08);
+    inset 0 1px 0 rgba(202, 154, 122, 0.08);
 }
 
 .contact-section__content {
@@ -41,7 +41,7 @@
 .contact-section__eyebrow {
   display: inline-block;
   margin-bottom: 0.9rem;
-  color: #ff9340;
+  color: var(--accent);
   font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.17em;

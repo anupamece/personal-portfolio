@@ -48,8 +48,8 @@
 
 .contact-form__field input:focus,
 .contact-form__field textarea:focus {
-  border-color: rgba(255, 122, 26, 0.42);
-  box-shadow: 0 0 0 4px rgba(255, 122, 26, 0.1);
+  border-color: rgba(202, 154, 122, 0.42);
+  box-shadow: 0 0 0 4px rgba(202, 154, 122, 0.1);
   background: rgba(255, 255, 255, 0.06);
 }
 
@@ -73,15 +73,22 @@
   margin-top: 0.15rem;
   padding: 0.68rem 1.05rem;
   border: none;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #ff7a1a, #ff9a3d);
+  border-radius: 0px;
+  background: var(--accent);
   color: #111111;
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 16px 28px rgba(255, 122, 26, 0.22);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s ease;
+}
+
+.contact-form__submit:hover:not(:disabled) {
+  background: var(--accent-soft);
+  box-shadow: 0 12px 24px rgba(202, 154, 122, 0.25);
+  transform: translateY(-1px);
 }
 
 .contact-form__submit:disabled {

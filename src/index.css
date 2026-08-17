@@ -9,25 +9,29 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #f5f1ea;
-  background: #050505;
-  --navbar-height: 5rem;
-  --app-background: #050505;
-  --surface-primary: linear-gradient(155deg, rgba(255, 122, 26, 0.08), rgba(9, 9, 9, 0.98) 40%, rgba(0, 0, 0, 0.98) 100%);
-  --surface-secondary: linear-gradient(145deg, rgba(255, 122, 26, 0.1), rgba(10, 10, 10, 0.98) 54%, rgba(2, 2, 2, 0.98) 100%);
-  --surface-glass: rgba(0, 0, 0, 0.18);
-  --surface-glass-strong: rgba(0, 0, 0, 0.28);
-  --text-primary: #f7f3ee;
-  --text-secondary: rgba(247, 243, 238, 0.74);
-  --text-muted: rgba(247, 243, 238, 0.56);
-  --text-dark: #111111;
-  --accent: #ff7a1a;
-  --accent-soft: #ff9a3d;
-  --accent-muted: rgba(255, 122, 26, 0.16);
-  --accent-glow: rgba(255, 122, 26, 0.32);
-  --border-soft: rgba(255, 255, 255, 0.1);
-  --border-strong: rgba(255, 122, 26, 0.24);
-  --shadow-primary: 0 22px 44px rgba(0, 0, 0, 0.28);
+  color: #f8fafc;
+  background: #0b0718;
+  --navbar-height: 4rem;
+  --app-background: #0b0718;
+  --surface-primary: linear-gradient(155deg, rgba(30, 20, 52, 0.75), rgba(13, 9, 25, 0.95) 40%, rgba(10, 7, 20, 0.98) 100%);
+  --surface-secondary: linear-gradient(145deg, rgba(38, 26, 66, 0.65), rgba(15, 10, 28, 0.95) 54%, rgba(11, 7, 22, 0.98) 100%);
+  --surface-glass: rgba(255, 255, 255, 0.05);
+  --surface-glass-strong: rgba(255, 255, 255, 0.1);
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-dark: #0d0d0d;
+  --accent: #CA9A7A;
+  --accent-soft: #D8AA88;
+  --accent-muted: rgba(202, 154, 122, 0.16);
+  --accent-glow: rgba(202, 154, 122, 0.35);
+  --highlight-bg: #CA9A7A;
+  --highlight-text: #0d0d0d;
+  --font-serif: 'Playfair Display', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --border-soft: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(202, 154, 122, 0.35);
+  --shadow-primary: 0 22px 44px rgba(0, 0, 0, 0.45);
   --section-dark: transparent;
   --section-dark-alt: transparent;
 }
@@ -60,8 +64,21 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1;
+  font-family: var(--font-serif);
+  line-height: 1.15;
+}
+
+.highlight-block {
+  display: inline-block;
+  background-color: var(--highlight-bg);
+  color: var(--highlight-text);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  padding: 0.05em 0.28em;
+  margin: 0 0.05em;
+  line-height: 1.05;
+  box-shadow: 0 4px 14px rgba(250, 204, 21, 0.25);
 }
 
 p {

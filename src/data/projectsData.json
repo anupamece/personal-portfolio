@@ -5,7 +5,7 @@
       "title": "Portfolio Experience Platform",
       "description": "A personal portfolio system with animated storytelling, bold section transitions, and reusable UI components for showcasing work and achievements.",
       "image": "/projectShots/major-1.png",
-      "exploreLink": "#",
+      "exploreLink": "https://personal-portfolio-opal-ten.vercel.app/",
       "githubLink": "https://github.com/anupamece/personal-portfolio"
     },
     {
@@ -21,8 +21,8 @@
       "title": "Myntra CLone (Frontend)",
       "description": " A frontend clone of the Myntra e-commerce platform, featuring a responsive design and interactive UI components to replicate the shopping experience. Built with React and styled-components for a modern and dynamic user interface.",
       "image": "/projectShots/major-3.png",
-      "exploreLink": "#",
-      "githubLink": "https://github.com/"
+      "exploreLink": "https://meet-sphere-rho.vercel.app/explore",
+      "githubLink": "https://github.com/anupamece/meetSphereFront.git"
     }
   ],
   "minorProjects": [

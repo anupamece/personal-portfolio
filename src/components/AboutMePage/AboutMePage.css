@@ -30,11 +30,12 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.65rem 1.25rem;
-  border-radius: 99px;
-  border: 1px solid var(--border-soft);
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text-primary);
-  font-size: 0.88rem;
+  border-radius: 0px;
+  border: 1px solid #CA9A7A;
+  background: #CA9A7A;
+  color: #0d0d0d;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -43,10 +44,9 @@
 }
 
 .about-me__back-btn:hover {
-  border-color: rgba(255, 122, 26, 0.4);
-  background: rgba(255, 122, 26, 0.1);
-  /* color: var(--accent-soft); */
-  /* transform: translateX(-4px); */
+  border-color: #D8AA88;
+  background: #D8AA88;
+  color: #0d0d0d;
 }
 
 .about-me__back-icon {
@@ -60,21 +60,21 @@
 
 .about-me__eyebrow {
   display: inline-block;
-  font-family: 'Caveat', cursive;
-  font-size: 1.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--accent-soft);
   margin-bottom: 0.5rem;
-  letter-spacing: 0.02em;
-  transform: rotate(-1.5deg);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .about-me__title {
   margin: 0 0 0.85rem;
+  font-family: var(--font-serif);
   font-size: clamp(2.4rem, 5.5vw, 4.4rem);
   color: var(--text-primary);
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 .about-me__subtitle {
@@ -93,11 +93,9 @@
 
 /* Card Styles */
 .about-me__card {
-  border-radius: 26px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: 
-    radial-gradient(circle at top right, rgba(255, 122, 26, 0.06), transparent 22%),
-    linear-gradient(145deg, rgba(255, 122, 26, 0.04), rgba(12, 12, 12, 0.96) 50%, rgba(0, 0, 0, 0.98) 100%);
+  border-radius: 0px;
+  border: 1px solid var(--border-soft);
+  background: var(--surface-primary);
   padding: 2.25rem;
   box-shadow: var(--shadow-primary);
   margin-bottom: 2.25rem;

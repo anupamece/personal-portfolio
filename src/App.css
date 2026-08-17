@@ -3,44 +3,6 @@
   background: var(--app-background);
 }
 
-.hero {
-  background: radial-gradient(circle at 12% 18%, rgba(255, 122, 26, 0.05), transparent 24%) !important;
-}
-
-.hero::before {
-  background: radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.04), transparent 20%) !important;
-}
-
-.hero__eyebrow {
-  color: var(--accent-soft);
-}
-
-.hero h1,
-.hero__description,
-.hero__button--ghost,
-.socials__link {
-  color: var(--text-primary);
-}
-
-.hero__title {
-  color: rgba(255, 255, 255, 0.56);
-}
-
-.hero__description {
-  color: var(--text-secondary);
-}
-
-.hero__button--ghost {
-  border-color: var(--border-soft);
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.socials__link {
-  border-color: var(--border-soft);
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-}
-
 .education-section,
 .projects-section,
 .positions-section,
@@ -54,6 +16,7 @@
 .projects-section h2,
 .positions-section h2 {
   color: var(--text-primary);
+  font-family: var(--font-serif);
 }
 
 .education-section__header p,
@@ -75,6 +38,7 @@
   border-color: var(--border-soft);
   background: var(--surface-secondary);
   box-shadow: var(--shadow-primary);
+  border-radius: 0px;
 }
 
 .project-card,
@@ -82,6 +46,7 @@
 .contact-visual__window {
   border-color: var(--border-soft);
   background: var(--surface-primary);
+  border-radius: 0px;
 }
 
 .projects-row__header h3,
@@ -89,6 +54,7 @@
 .project-card__content h4,
 .education-card h3 {
   color: var(--text-primary);
+  font-family: var(--font-serif);
 }
 
 .position-card__description,
@@ -115,6 +81,7 @@
 .contact-form__field textarea {
   border-color: var(--border-soft);
   background: rgba(255, 255, 255, 0.05);
+  border-radius: 0px;
 }
 
 .skill-pill__label,
@@ -130,10 +97,4 @@
 .contact-form__field input::placeholder,
 .contact-form__field textarea::placeholder {
   color: var(--text-muted);
-}
-
-@media (max-width: 1080px) {
-  .hero {
-    background: radial-gradient(circle at 10% 14%, rgba(255, 122, 26, 0.16), transparent 24%) !important;
-  }
 }

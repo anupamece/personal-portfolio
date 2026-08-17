@@ -69,15 +69,15 @@
   width: calc(85% - 2px);
   border-radius: 999px;
   background:
-    linear-gradient(90deg, #ff7a1a 0%, #ff9a3d 55%, #ff7a1a 100%),
+    linear-gradient(90deg, var(--accent) 0%, var(--accent-soft) 55%, var(--accent) 100%),
     repeating-linear-gradient(
       90deg,
       rgba(255, 255, 255, 0.22) 0 12px,
       rgba(255, 255, 255, 0) 12px 26px
     );
   box-shadow:
-    0 0 18px rgba(255, 122, 26, 0.38),
-    inset 0 0 0 1px rgba(255, 214, 173, 0.24);
+    0 0 18px rgba(202, 154, 122, 0.38),
+    inset 0 0 0 1px rgba(216, 170, 136, 0.24);
 }
 
 .education-timeline__line::after {
@@ -89,11 +89,11 @@
   height: 18px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, #ffe2c9 0%, #ff9a3d 38%, rgba(255, 122, 26, 0.2) 72%, transparent 100%);
+  background: radial-gradient(circle, #ffe2c9 0%, var(--accent-soft) 38%, rgba(202, 154, 122, 0.2) 72%, transparent 100%);
   box-shadow:
-    0 0 0 4px rgba(255, 122, 26, 0.2),
-    0 0 22px rgba(255, 122, 26, 0.75),
-    0 0 34px rgba(255, 154, 61, 0.5);
+    0 0 0 4px rgba(202, 154, 122, 0.2),
+    0 0 22px rgba(202, 154, 122, 0.75),
+    0 0 34px rgba(202, 154, 122, 0.5);
   animation: education-progress-glow 1.6s ease-in-out infinite;
 }
 
@@ -102,17 +102,17 @@
   100% {
     transform: translate(-50%, -50%) scale(0.95);
     box-shadow:
-      0 0 0 4px rgba(255, 122, 26, 0.16),
-      0 0 18px rgba(255, 122, 26, 0.55),
-      0 0 28px rgba(255, 154, 61, 0.36);
+      0 0 0 4px rgba(202, 154, 122, 0.16),
+      0 0 18px rgba(202, 154, 122, 0.55),
+      0 0 28px rgba(202, 154, 122, 0.36);
   }
 
   50% {
     transform: translate(-50%, -50%) scale(1.12);
     box-shadow:
-      0 0 0 6px rgba(255, 122, 26, 0.26),
-      0 0 26px rgba(255, 122, 26, 0.82),
-      0 0 42px rgba(255, 154, 61, 0.56);
+      0 0 0 6px rgba(202, 154, 122, 0.26),
+      0 0 26px rgba(202, 154, 122, 0.82),
+      0 0 42px rgba(202, 154, 122, 0.56);
   }
 }
 
@@ -132,19 +132,19 @@
   height: 20px;
   border: 4px solid rgba(17, 17, 17, 0.96);
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #ffc289, #ff7a1a 58%, #111111 100%);
+  background: radial-gradient(circle at 30% 30%, #D8AA88, var(--accent) 58%, #111111 100%);
   transform: translate(-50%, -50%);
   box-shadow:
-    0 0 0 8px rgba(255, 122, 26, 0.06),
-    0 0 22px rgba(255, 122, 26, 0.28);
+    0 0 0 8px rgba(202, 154, 122, 0.06),
+    0 0 22px rgba(202, 154, 122, 0.28);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .education-card:hover .education-card__node {
   transform: translate(-50%, -50%) scale(1.25);
   box-shadow:
-    0 0 0 10px rgba(255, 122, 26, 0.15),
-    0 0 26px rgba(255, 122, 26, 0.5);
+    0 0 0 10px rgba(202, 154, 122, 0.15),
+    0 0 26px rgba(202, 154, 122, 0.5);
 }
 
 .education-card::after {
@@ -154,9 +154,9 @@
   top: 4.85rem;
   width: 2px;
   height: 3.7rem;
-  background: linear-gradient(180deg, var(--accent) 0%, rgba(255, 122, 26, 0.15) 100%);
+  background: linear-gradient(180deg, var(--accent) 0%, rgba(202, 154, 122, 0.15) 100%);
   transform: translateX(-50%);
-  box-shadow: 0 0 18px rgba(255, 122, 26, 0.16);
+  box-shadow: 0 0 18px rgba(202, 154, 122, 0.16);
 }
 
 .education-card__content {
@@ -166,11 +166,11 @@
   margin-top: 8.5rem;
   padding: 1.35rem 1.45rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  background: linear-gradient(155deg, rgba(255, 122, 26, 0.03) 0%, rgba(10, 10, 10, 0.85) 50%, rgba(0, 0, 0, 0.98) 100%);
+  border-radius: 0px;
+  background: linear-gradient(155deg, rgba(202, 154, 122, 0.03) 0%, rgba(10, 10, 10, 0.85) 50%, rgba(0, 0, 0, 0.98) 100%);
   box-shadow:
     0 22px 36px rgba(0, 0, 0, 0.24),
-    inset 0 1px 0 rgba(255, 122, 26, 0.08);
+    inset 0 1px 0 rgba(202, 154, 122, 0.08);
   backdrop-filter: blur(12px);
   transition:
     border-color 0.28s ease,
@@ -180,12 +180,12 @@
 }
 
 .education-card:hover .education-card__content {
-  border-color: rgba(255, 122, 26, 0.42);
+  border-color: rgba(202, 154, 122, 0.42);
   transform: translateY(-4px);
   box-shadow:
     0 24px 40px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(255, 122, 26, 0.14),
-    0 0 24px rgba(255, 122, 26, 0.15);
+    0 0 0 1px rgba(202, 154, 122, 0.14),
+    0 0 24px rgba(202, 154, 122, 0.15);
 }
 
 .education-card__logo-wrapper {
