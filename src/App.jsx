@@ -22,14 +22,14 @@ function App() {
   useEffect(()=>{
     const timer =setTimeout(()=>{
       setLoading(false);
-    }, 3000);
+    }, 2000);
     
     return () => clearTimeout(timer);
   },[]);
 
   return (
     <Router>
-      {loading ? <PreLoader duration={3000}/> : (
+      {loading ? <PreLoader duration={2000}/> : (
         <Routes>
           <Route path="/" element={
             <>
